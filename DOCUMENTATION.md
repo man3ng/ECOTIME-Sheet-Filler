@@ -1,6 +1,6 @@
 # Ecotime Autofill — Technical Documentation
 
-Version 24.0. Companion to `README.md`, which covers install and everyday use. This document explains how the script works, why it works that way, and what to do when it doesn't.
+Prod Version 1.0. Companion to `README.md`, which covers install and everyday use. This document explains how the script works, why it works that way, and what to do when it doesn't.
 
 ---
 
