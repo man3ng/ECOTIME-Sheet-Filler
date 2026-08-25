@@ -216,7 +216,7 @@ For anything deeper, see `DOCUMENTATION.md`.
 ---
 
 ## Notes
-Made by me with assistant of A.I. coding assistants
+Made by me and A.I. coding assistants
 
 This is an unofficial tool, not affiliated with UCSD or Ecotime, and it may break whenever Ecotime changes its pages.
 
