@@ -2,7 +2,7 @@
 
 A Tampermonkey userscript that fills and clears UCSD Ecotime timesheets. Set your weekly hours once; one click fills every day of the pay period and saves each one.
 
-Version 24.0
+Version 1.0 Prod
 
 ---
 
@@ -216,6 +216,7 @@ For anything deeper, see `DOCUMENTATION.md`.
 ---
 
 ## Notes
+Made by me with assistant of A.I. coding assistants
 
 This is an unofficial tool, not affiliated with UCSD or Ecotime, and it may break whenever Ecotime changes its pages.
 
