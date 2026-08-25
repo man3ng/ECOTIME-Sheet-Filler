@@ -106,7 +106,7 @@ Leave it empty (`{}`) when you have no exceptions.
 
 ## Getting an AI agent to write your schedule
 
-If you would rather describe your hours in plain English than edit JavaScript, paste the prompt below into ChatGPT, Claude, Gemini, Copilot, or any other assistant. It contains everything the agent needs — you do **not** need to send a screenshot of your timesheet or share the script.
+If you would rather describe your hours in plain English or using a screenshot of your hours through calendars from Google, Apple, or WhenIwork than edit JavaScript, paste the prompt below into ChatGPT, Claude, Gemini, Copilot, or any other assistant. It contains everything the agent needs — you do **not** need to send a screenshot of your timesheet or share the script.
 
 Copy from the line below through the end of the block, fill in your hours where marked, and send it.
 
@@ -114,8 +114,8 @@ Copy from the line below through the end of the block, fill in your hours where 
 
 ````
 I use a Tampermonkey userscript that autofills my UCSD Ecotime timesheet. I need you
-to convert my work schedule into its JavaScript config format. Output ONLY the code,
-in one block, with no explanation.
+to convert my work schedule (from the attached screenshot or text below) into its 
+JavaScript config format. Output ONLY the code and hours breakdown, with no other conversational filler.
 
 FORMAT SPEC
 
@@ -138,23 +138,21 @@ const DATE_OVERRIDES = {
 
 RULES
 1. All seven keys must be present in SCHEDULE, in order Mon through Sun.
-2. A day I do not work must be exactly `null` (no quotes, no empty object).
-3. `in` and `out` are single-quoted strings. Accepted: '8:30 AM', '10 AM', '7:00 PM',
-   '19:00'. Prefer 12-hour with AM/PM.
-4. `meal` is an unquoted whole number of MINUTES. No break is 0. "Half hour lunch"
-   is 30, "one hour lunch" is 60.
-5. A pay period is two weeks and each weekday entry automatically applies to BOTH
-   weeks. Do not duplicate anything for week two.
-6. DATE_OVERRIDES is only for a specific calendar date that differs from my normal
-   weekly pattern. Keys are 'MM/DD' strings. Use null to skip that date entirely.
-   If I mention no exceptions, leave it empty with a commented-out example.
-7. After the code block, on one line each, list every weekday with its computed paid
-   hours: (out - in) - meal, in decimal. Flag any day over 8 hours or any week over 40.
-8. Do not invent hours I did not state. If something is ambiguous, ask me before
+2. A day not worked must be exactly `null` (no quotes, no empty object).
+3. `in` and `out` are single-quoted strings formatted as 12-hour AM/PM (e.g., '7:45 AM', '4:15 PM').
+4. `meal` is an unquoted whole number of MINUTES:
+   - For shifts ≥ 6 hours where meal isn't specified, default to standard 30 minutes (or 0 if < 6 hours).
+5. A pay period is two weeks. If the weekly pattern repeats identically in both weeks, 
+   put it in SCHEDULE and leave DATE_OVERRIDES empty.
+6. Use DATE_OVERRIDES for specific dates (format 'MM/DD') that deviate from the standard weekly cycle.
+7. After the code block, list every day worked with its computed paid hours: 
+   (out - in) - meal, in decimal format. Flag any day > 8.00 hours or week > 40.00 hours.
+8. If reading an attached image, extract the exact start/end times per day from the calendar cells.
+9. Do not invent hours I did not state. If something is ambiguous, ask me before
    producing the code.
 
 MY SCHEDULE
-<<< Describe your hours here in plain English. Examples of the kind of thing that works:
+<<< Attach screenshot here OR describe hours in plain English. Examples of the kind of thing that works:
 
     "Mon Wed Fri 9am to 2pm no lunch, Tue and Thu 8:30 to 5 with a half hour lunch,
      weekends off"
