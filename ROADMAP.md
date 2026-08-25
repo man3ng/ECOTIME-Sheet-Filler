@@ -1,6 +1,6 @@
 # Project Roadmap: UCSD Ecotime Autofill
 
-A forward-looking technical roadmap based on the v24.0 state machine, dynamic date parser, and multi-frame architecture.
+A forward-looking technical roadmap based on the v1.0 prod state machine, dynamic date parser, and multi-frame architecture.
 
 ---
 
