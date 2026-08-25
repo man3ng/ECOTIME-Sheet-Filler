@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         UCSD Ecotime Custom Autofill
 // @namespace    http://tampermonkey.net/
-// @version      24.0
+// @version      1.0
 // @description  Per-weekday schedule autofill and bulk clear for UCSD Ecotime. Mirrors each weekday's hours across both weeks of the pay period.
-// @author       AI Assistant
+// @author       Tri & AI Assistant
 // @match        *://*.ecotimebyhbs.com/*
 // @match        *://ecotimecampus.ucsd.edu/*
 // @grant        none
