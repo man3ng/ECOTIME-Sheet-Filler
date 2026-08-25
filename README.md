@@ -28,7 +28,7 @@ Greasemonkey and Violentmonkey will probably work too, but Tampermonkey is what 
 2. Chrome only: go to `chrome://extensions`, and turn on **Developer mode** (top right). Since Chrome 138 (mid-2025 Stable Release) Tampermonkey needs this to run scripts.
 3. Click the Tampermonkey icon → **Create a new script…**
 4. Select everything in the editor and delete it.
-5. Paste the entire contents of `ecotime-autofill-v24.user.js`.
+5. Paste the entire contents of `ecotime-autofill-prod-v1.user.js`.
 6. **File → Save**, or Ctrl+S.
 7. Open Ecotime and go to your timesheet. Buttons appear at the bottom right.
 
