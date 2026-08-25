@@ -4,17 +4,17 @@ A forward-looking technical roadmap based on the v1.0 prod state machine, dynami
 
 ---
 
-## Phase 1: Engine Optimizations & Config UX (Current Milestone)
-* **Pre-flight Confirmation Modal:** Replace native browser `confirm()` with a styled in-page modal displaying an interactive schedule summary before running `startRun('fill')` or `startRun('clear')`.
-* **Config Preset Switcher:** Support switching between multiple schedule profiles directly from the UI (e.g., *Academic Quarter* vs. *Summer Break* vs. *Finals Week*) without manually editing `SCHEDULE` in code.
-* **Granular Failure Recovery:** Improve `blindTicks` error handling by capturing and logging specific AJAX dropouts or frame-detachment errors instead of relying solely on timeouts.
-
----
-
-## Phase 2: Shift Flexibility & Advanced Timesheet Rules
+## Phase 1: Shift Flexibility & Advanced Timesheet Rules (Current Milestone)
 * **Multi-Row & Split Shift Handling:** Extend `applyRow()` to populate multiple entry rows per day for split shifts (e.g., 9:00 AM–12:00 PM, then 2:00 PM–5:00 PM on the same date).
 * **Automated Campus Holiday Ingestion:** Pre-populate `DATE_OVERRIDES` with UC San Diego's official academic calendar and administrative holidays so non-working dates default to `null` automatically.
 * **Dynamic Meal-Break Compliance:** Automatically adjust `meal` to 30 or 60 minutes based on total elapsed shift time if shifts exceed California non-exempt thresholds (5+ continuous hours).
+
+---
+
+## Phase 2: Engine Optimizations & Config UX
+* **Pre-flight Confirmation Modal:** Replace native browser `confirm()` with a styled in-page modal displaying an interactive schedule summary before running `startRun('fill')` or `startRun('clear')`.
+* **Config Preset Switcher:** Support switching between multiple schedule profiles directly from the UI (e.g., *Academic Quarter* vs. *Summer Break* vs. *Finals Week*) without manually editing `SCHEDULE` in code.
+* **Granular Failure Recovery:** Improve `blindTicks` error handling by capturing and logging specific AJAX dropouts or frame-detachment errors instead of relying solely on timeouts.
 
 ---
 
