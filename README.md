@@ -203,7 +203,7 @@ const OPTIONS = {
 
 ## Troubleshooting
 
-**No buttons appear.** Confirm Tampermonkey is enabled and shows "1" on its icon while on Ecotime. On Chrome, check that Developer mode is on at `chrome://extensions`. Confirm the Ecotime URL matches one of the `@match` lines near the top of the script; if your campus uses a different hostname, add it.
+**No buttons appear.** Confirm Tampermonkey is enabled and shows "1" on its icon while on Ecotime. On Chrome, check that Developer mode is on at `chrome://extensions`. Confirm the Ecotime URL matches one of the `@match` lines near the top of the script; if your campus uses a different hostname, add it. Note: as of now, I have only tested this UCSD's Ecotime, please let me know if it is also working with other variation of Ecotime at different institutions.
 
 **"Nothing to fill."** Every weekday in `SCHEDULE` is `null`, or `skipDaysAlreadyMatching` is on and everything already matches. Press Ctrl+Shift+D and click Debug to see the queue.
 
